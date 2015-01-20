@@ -15,8 +15,8 @@ class IngredientsController < ApplicationController
         marker.infowindow ingredient.title
         marker.picture({
           "url" => "http://img2.wikia.nocookie.net/__cb20110617061936/ageofempiresonline/images/c/c6/Food.png",
-          "width" => 20,
-          "height" => 20
+          "width" => 32,
+          "height" => 32
           })
         marker.json({ title: ingredient.title}) 
     end

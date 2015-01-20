@@ -1,16 +1,44 @@
+
+  
+
+
+
+<%= submit_tag "Zoek naar ingredienten in de buurt", :name => nil %>
 <%= form_tag ingredients_path, :method => :get do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Zoek naar ingredienten in de buurt", :name => nil %>
-<% end %>
-<div id="map" style='width: 690px; height: 500px;'></div>
-<%= link_to 'Ingredient toevoegen', new_ingredient_path %>
-<% @ingredients.each do |ingredient| %>
-  <%= ingredient.title %>
-  <%= ingredient.description %>
-  <%= link_to 'Weergeven', ingredient %>
-  <%= link_to 'Aanpasssen', edit_ingredient_path(ingredient) %>
-  <%= link_to 'Verwijderen', ingredient, method: :delete, data: { confirm: 'Bevestigen' } %>
-<% end %>
+  <%= text_field_tag :search, params[:ingredient] %>
+ <% end %>
+
+ <button><%= link_to 'Ingredient toevoegen', new_ingredient_path %></button>
+  <div class="row">
+    <div class="t column">
+  <div id="map" style='width: auto; height: auto;'></div>
+</div>
+</div>
+  
+ 
+<table class="u-max-full-width">
+  <thead>
+    <tr>
+      <th>Ingrediënt</th>
+      <th>Informatie</th>
+      <th>Bekijken</th>
+      <th>Aanpassen</th>
+      <th>Verwijderen</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+    <tr>
+      <td><%= ingredient.title %></td>
+      <td><%= ingredient.description %></td>
+      <td><%= link_to 'Weergeven', ingredient %></td>
+      <td><%= link_to 'Aanpasssen', edit_ingredient_path(ingredient) %></td>
+      <td><%= link_to 'Verwijderen', ingredient, method: :delete, data: { confirm: 'Bevestigen' } %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
 
 <script type="text/javascript">
   handler = Gmaps.build('Google');
@@ -19,5 +47,9 @@
   { markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
+  DirectionsService();
   });
 </script>
+
+
+  

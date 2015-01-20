@@ -1,35 +1,55 @@
 
+<div class="row">
 
-<%= form_for(@ingredient) do |f| %>
-<div class="container">
   <% if @ingredient.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
+      <%= pluralize(@ingredient.errors.count, "error") %> Oeps.
 
-      <ul>
-      <% @ingredient.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+</div>
+   
+
   <% end %>
 
+<%= form_for(@ingredient) do |f| %>
 
-    <%= f.label "Titel" %><br>
+    <%= f.label "Titel" %>
     <%= f.text_field :title %>
 
 
-    <%= f.label "Omschrijving" %><br>
+    <%= f.label "Omschrijving" %>
     <%= f.text_area :description %>
 
 
-    <%= f.label "Locatie (adres)" %><br>
+    <%= f.label "Locatie (adres)" %>
     <%= f.text_field :address %>
 
  
 
 
     <%= f.submit "Maken" %><br>
+
+    <form>
+  <div class="row">
+    <div class="six columns">
+      <label for="Naam">Naam ingrediënt</label>
+      <input class="u-full-width" type="text" placeholder="test@mailbox.com" id="exampleEmailInput">
+    </div>
+    <div class="six columns">
+      <label for="exampleRecipientInput">Reason for contacting</label>
+      <select class="u-full-width" id="exampleRecipientInput">
+        <option value="Option 1">Questions</option>
+        <option value="Option 2">Admiration</option>
+        <option value="Option 3">Can I get your number?</option>
+      </select>
+    </div>
+  </div>
+  <label for="exampleMessage">Message</label>
+  <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage"></textarea>
+  <label class="example-send-yourself-copy">
+    <input type="checkbox">
+    <span class="label-body">Send a copy to yourself</span>
+  </label>
+  <input class="button-primary" type="submit" value="Submit">
+</form>
 
 
 <% end %>
