@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Titel:</strong>
+  <%= @ingredient.title %>
+</p>
+<p>
+  <strong>Omschrijving:</strong>
+  <%= @ingredient.description %>
+</p>
+
+<p>
+  <strong>Breedte graad:</strong>
+  <%= @ingredient.latitude %>
+</p>
+
+<p>
+  <strong>Lengte graad:</strong>
+  <%= @ingredient.longitude %>
+</p>
+
+<p>
+  <strong>Locatie:</strong>
+  <%= @ingredient.address %>
+</p>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@ingredient.latitude}%2C#{@ingredient.longitude}" %>
+
+<h3>Dichtsbijzijnde ingrediënten</h3>
+<ul>
+<% for ingredient in @ingredient.nearbys(10) %>
+  <li><%= link_to ingredient.address, ingredient %> (<%= ingredient.distance.round(2) %> kilometers)</li>
+<% end %>
+</ul>
+
+
+<%= link_to 'Aanpassen', edit_ingredient_path(@ingredient) %> |
+<%= link_to 'Terug', ingredients_path %>

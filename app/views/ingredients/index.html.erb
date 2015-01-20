@@ -1,0 +1,23 @@
+<%= form_tag ingredients_path, :method => :get do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Zoek naar ingredienten in de buurt", :name => nil %>
+<% end %>
+<div id="map" style='width: 690px; height: 500px;'></div>
+<%= link_to 'Ingredient toevoegen', new_ingredient_path %>
+<% @ingredients.each do |ingredient| %>
+  <%= ingredient.title %>
+  <%= ingredient.description %>
+  <%= link_to 'Weergeven', ingredient %>
+  <%= link_to 'Aanpasssen', edit_ingredient_path(ingredient) %>
+  <%= link_to 'Verwijderen', ingredient, method: :delete, data: { confirm: 'Bevestigen' } %>
+<% end %>
+
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap
+  ({provider: {}, internal: {id: 'map'}}, function()
+  { markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  });
+</script>

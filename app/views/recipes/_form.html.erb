@@ -1,0 +1,16 @@
+<%= form_for(@recipe) do |f| %>
+
+
+ 
+  <div class="field">
+    <%= f.label "Naam van het recept" %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label "Omschrijving" %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Maken" %>
+  </div>
+<% end %>
