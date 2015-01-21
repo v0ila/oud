@@ -22,9 +22,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'gmaps4rails'
 
-gem 'activeadmin', github: 'activeadmin'
 
-gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
+
 
 gem 'sass-rails'
 
