@@ -15,11 +15,11 @@
         <span class="menu"></span>
         <div class="top-menu">
           <ul>
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="404.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><%= link_to "Home", root_path, class: "active" %></li>
+            <li><%= link_to "Info", root_path %></li>
+            <li><%= link_to "Recepten", ingredients_path %></li>
+            <li><%= link_to "Ingredienten", root_path %></li>
+            <li><%= link_to "Inloggen", root_path %></li>
             <div class="clearfix"></div>
           </ul>
         </div>
@@ -33,6 +33,7 @@
       </script>
       <!-- script for menu -->
           <div class="clearfix"> </div>
+           <div class="clearfix"> </div>
       </div>
       </div>
     </div>
