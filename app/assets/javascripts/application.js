@@ -10,10 +10,15 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require custom
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require easing
+//= require jquery.mixitup.min
+//= require jquery.swipebox.min
+//= require move-top
+//= require responsiveslides.min
+//= require wow.min
 //= require underscore
 //= require gmaps/google
 //= require_tree .
