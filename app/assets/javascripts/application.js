@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.lightbox
+//= require jquery.min
+//= require responsiveslides.min
 //= require_tree
