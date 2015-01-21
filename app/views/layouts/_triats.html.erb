@@ -1,0 +1,39 @@
+<div class="triats  wow fadeInUp" data-wow-delay="0.4s">
+    <div class="container">
+      <h3 class="heding ded"><span>Triats & Te</span>chnologies</h3>
+      <div  id="top" class="callbacks_container">
+           <ul class="rslides" id="slider4">
+              <li>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut lar  dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut la  consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore. </p>
+              </li>
+              <li>
+                <p>Dolor sit amet, consectetuer Lorem ipsum  adipiscing elit, sed diam nonummy nibh euismod tincidunt ut lar  dolor sit amet, , sed diam nonummy nibh euismod  consectetuer adipiscing elittincidunt ut laoreet dolore Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut la  consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore. </p>
+              </li>
+              <li>
+                <p>Consectetuer adipiscing elit,Lorem ipsum dolor sit amet,  sed diam nonummy nibh euismod tincidunt ut lar  dolor sit amet,diam nonummy nibh euismod consectetuer adipiscing elit, sed  tincidunt ut laoreet dolore Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut la  consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore. </p>
+              </li>
+           </ul>
+      </div>
+    </div>
+    <script src="web/js/responsiveslides.min.js"></script>
+       <script>
+          // You can also use "$(window).load(function() {"
+          $(function () {
+            // Slideshow 4
+            $("#slider4").responsiveSlides({
+              auto: true,
+              pager: true,
+              nav: true,
+              speed: 500,
+              namespace: "callbacks",
+              before: function () {
+                $('.events').append("<li>before event fired.</li>");
+              },
+              after: function () {
+                $('.events').append("<li>after event fired.</li>");
+              }
+            });
+      
+          });
+        </script>
+  </div>
