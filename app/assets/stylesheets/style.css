@@ -369,7 +369,7 @@ ul.topic_grid{
 /*** .Nav Class ************************/
 .icon-minus-sign:after {
 	content: "";
-	background: url(plus.png)no-repeat;
+	background: url('plus.png')no-repeat;
 	width:16px;
 	height:16px;
 	position: absolute;
@@ -381,7 +381,7 @@ ul.topic_grid{
 }
 .icon-plus-sign:before {
 	content: "";
-	background: url(plus.png)no-repeat;
+	background: url('plus.png')no-repeat;
 	width:16px;
 	height:16px;
 	position: absolute;
@@ -484,7 +484,7 @@ ul.topic_grid{
 }
 .accordation_menu label:hover .icon-plus-sign:before {
 	content: "";
-	background: url(minus.png)no-repeat;
+	background: url('minus.png')no-repeat;
 	width:16px;
 	height:16px;
 	position: absolute;
@@ -656,7 +656,7 @@ ul.list li {
 	font-size: 18px;
 	margin-bottom: 15px;
 	padding-left: 28px;
-	background: url(arrow.png) left 3px no-repeat;
+	background: url('arrow.png') left 3px no-repeat;
 }
 ul.list {
 	margin-top: 2.6em;
@@ -857,7 +857,7 @@ i.zi {
 	left: 0;
 	width: 102px;
 	height: 100px;
-	background: url(magnify.png) no-repeat 0px 0px;
+	background: url('magnify.png') no-repeat 0px 0px;
 	cursor: pointer;
 	transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
@@ -1308,7 +1308,7 @@ a.b-home:hover{
 	span.menu{
 		width:32px;
 		height:32px;
-		background:url(nav.png)no-repeat;
+		background:url('nav.png')no-repeat;
 		display: inline-block;
 		float:left;
 		cursor: pointer;
