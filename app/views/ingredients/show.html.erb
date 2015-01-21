@@ -1,10 +1,30 @@
-<%= @ingredient.title %>
-<%= @ingredient.description %>
-<%= @ingredient.address %>
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@ingredient.latitude}%2C#{@ingredient.longitude}" %>
-Dichtsbijzijnde ingrediënten
-<% for ingredient in @ingredient.nearbys(10) %>
-<%= link_to ingredient.title, ingredient %> (<%= ingredient.distance.round(2) %> kilometers)
-<% end %>
-<%= link_to 'Aanpassen', edit_ingredient_path(@ingredient) %> |
-<%= link_to 'Terug', ingredients_path %>
+<div class="service-section">
+  <div class="container">
+    <div class="service-section-grids">
+      <div class="col-md-4 service-section-grid-3">
+        <ul>
+          <li><%= @ingredient.title %></li>
+          <li><%= @ingredient.description %></li>
+          <li><%= @ingredient.address %></li>
+        </ul>
+      </div>
+      <div class="col-md-4 service-section-grid-3">
+        <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@ingredient.latitude}%2C#{@ingredient.longitude}" %>
+      </div>
+      <div class="col-md-4 service-section-grid-3">
+        Dichtsbijzijnde ingrediënten
+        <% for ingredient in @ingredient.nearbys(10) %>
+        <%= link_to ingredient.title, ingredient %> (<%= ingredient.distance.round(2) %> kilometers)
+        <% end %>
+      
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+<div id="aanpassenterug">
+<p> <%= link_to 'Aanpassen', edit_ingredient_path(@ingredient) %>
+        <%= link_to 'Terug', ingredients_path %></p>

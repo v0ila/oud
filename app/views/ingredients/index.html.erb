@@ -1,32 +1,11 @@
 
-  <div class="service-section">
-  <div class="container">
-    <div class="service-section-grids">
-      <div class="col-md-4 service-section-grid-3">
-        <h3>Bosbessen smoothie</h3>
-        <img src="assets/bosbessensmoothie.png" alt="" />
-        <h4>Quisque eget ante lorem. Proin tincidu, lorem ut convallis egestas</h4>
-        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspend isse eget mi diam. Quisque eget ante lorem. Proin tincidunt, lorem ut convallis egestas, enim justo placerat magna, nec dictum enim ante id elit.</p>
-        <a class="btn btn-1 btn-1c" href="">Bekijk het recept</a>
-      </div>
-      <div class="col-md-4 service-section-grid-3">
-        <h3>Pannenkoeken</h3>
-        <img src="assets/pannenkoeken.png" alt="" />
-        <h4>Quisque eget ante lorem. Proin tincidu, lorem ut convallis egestas</h4>
-        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspend isse eget mi diam. Quisque eget ante lorem. Proin tincidunt, lorem ut convallis egestas, enim justo placerat magna, nec dictum enim ante id elit.</p>
-        <a class="btn btn-1 btn-1c" href="">Bekijk het recept</a>
-      </div>
-      <div class="col-md-4 service-section-grid-3">
-      <h3>Gebakken eieren</h3>
-      <img src="assets/gebakkeneieren.png" alt="" />
-      <h4>Praesent sodales pretium tellus, et euismod neque malesuada et</h4>
-      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspend isse eget mi diam. Quisque eget ante lorem. Proin tincidunt, lorem ut convallis egestas, enim justo placerat magna, nec dictum enim ante id elit.</p>
-      <a class="btn btn-1 btn-1c" href="">Bekijk het recept</a>
-      </div>
+
     
 
 
-
+<div class="service-section">
+  <div class="container">
+    <div class="service-section-grids">
 
 <div class="col-md-4 service-section-grid-3">
 <%= submit_tag "Zoek naar ingredienten in de buurt", :name => nil %>
@@ -35,15 +14,15 @@
  <% end %>
 
  <%= link_to 'Ingredient toevoegen', new_ingredient_path, class: "btn btn-1 btn-1c" %>
-  <div class="row">
-    
-  <div id="map" style='width: 300; height: 500;'></div>
 
-</div>
-</div>
+    
+  <div id="map" style='width: 300px; height: 300px;'></div>
+
+
+
   
- 
-<table class="u-max-full-width">
+ <div class="col-md-4 service-section-grid-1">
+<table class="legend">
   <thead>
     <tr>
       <th>Ingrediënt</th>
@@ -66,7 +45,7 @@
   </tbody>
   <% end %>
 </table>
-
+</div>
 <script type="text/javascript">
   handler = Gmaps.build('Google');
   handler.buildMap
