@@ -1,3 +1,27 @@
 <div class="map wow fadeInUp" data-wow-delay="0.4s">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3206055.8832623623!2d-92.43709899999999!3d38.30466145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1416477480697" frameborder="0" style="border:0"></iframe>
+    <div id="map" style='width: 500; height: 500;'></div>
   </div>
+<%= submit_tag "Zoek naar ingredienten in de buurt", :name => nil %>
+<%= form_tag ingredients_path, :method => :get do %>
+  <%= text_field_tag :search, params[:ingredient] %>
+ <% end %>
+
+ <button><%= link_to 'Ingredient toevoegen', new_ingredient_path %></button>
+  <div class="row">
+    <div class="t column">
+  
+</div>
+</div>
+  
+ 
+<!--  -->
+  <script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap
+  ({provider: {}, internal: {id: 'map'}}, function()
+  { markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  DirectionsService();
+  });
+</script>
