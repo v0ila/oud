@@ -13,11 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require easing
-//= require jquery-1.11.0.min
-//= require wow.min 
-//= require responsiveslides.min
-//= require move-top
-//= require jquery.swipebox.min
-//= require jquery.mixitup.min
 //= require_tree
